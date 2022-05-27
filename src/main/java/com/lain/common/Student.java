@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
 @Data
 @AllArgsConstructor
 public class Student implements Comparable<Student> {
@@ -13,6 +15,10 @@ public class Student implements Comparable<Student> {
 
     @Override
     public int compareTo(@NotNull Student o) {
-        return this.score - o.score;
+        if (Objects.equals(o.score, this.score)) {
+            return this.age - o.age;
+        } else {
+            return this.score - o.score;
+        }
     }
 }
