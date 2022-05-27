@@ -1,11 +1,11 @@
 package com.lain.learn.collection;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 public class LearnComparator {
+
     public static void main(String[] args) {
         List<String> list = new ArrayList<>() {{
             add("tom");
@@ -23,4 +23,5 @@ public class LearnComparator {
                 .thenComparing(String::length, Comparator.reverseOrder()));
         list.forEach(System.out::println);
     }
+
 }
